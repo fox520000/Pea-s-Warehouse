@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh" class="light" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>转换结果 - Pea 全能格式转换器</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+  <style type="text/tailwindcss">
+    @theme inline {
+      --color-background: var(--doubao-background);
+      --color-foreground: var(--doubao-foreground);
+      --color-card: var(--doubao-card);
+      --color-card-foreground: var(--doubao-card-foreground);
+      --color-popover: var(--doubao-popover);
+      --color-popover-foreground: var(--doubao-popover-foreground);
+      --color-primary: var(--doubao-primary);
+      --color-primary-foreground: var(--doubao-primary-foreground);
+      --color-secondary: var(--doubao-secondary);
+      --color-secondary-foreground: var(--doubao-secondary-foreground);
+      --color-muted: var(--doubao-muted);
+      --color-muted-foreground: var(--doubao-muted-foreground);
+      --color-accent: var(--doubao-accent);
+      --color-accent-foreground: var(--doubao-accent-foreground);
+      --color-destructive: var(--doubao-destructive);
+      --color-destructive-foreground: var(--doubao-destructive-foreground);
+      --color-border: var(--doubao-border);
+      --color-input: var(--doubao-input);
+      --color-ring: var(--doubao-ring);
+      --color-chart-1: var(--doubao-chart-1);
+      --color-chart-2: var(--doubao-chart-2);
+      --color-chart-3: var(--doubao-chart-3);
+      --color-chart-4: var(--doubao-chart-4);
+      --color-chart-5: var(--doubao-chart-5);
+      --radius-sm: var(--doubao-radius-sm);
+      --radius-md: var(--doubao-radius-md);
+      --radius-lg: var(--doubao-radius-lg);
+      --radius-xl: var(--doubao-radius-xl);
+    }
+    @layer base {
+      body { background: var(--doubao-background); color: var(--doubao-foreground); }
+    }
+  </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+  <main class="flex min-h-screen flex-col">
+    <!-- Header -->
+    <header class="sticky top-0 z-10 border-b border-border bg-background/95 backdrop-blur">
+      <div class="mx-auto flex max-w-5xl items-center justify-between px-4 sm:px-6 py-4">
+        <a href="index.html" class="flex items-center gap-2 text-lg font-semibold text-foreground">
+          <span data-icon class="inline-flex text-primary" style="width:20px;height:20px;mask-image:url(assets/image_0_tgt36j.svg);-webkit-mask-image:url(assets/image_0_tgt36j.svg);"></span>
+          <span class="hide-sm sm:inline">Pea 全能格式转换器</span>
+          <span class="sm:hidden inline">Pea</span>
+        </a>
+        <nav class="flex items-center gap-1 bg-muted rounded-lg p-1">
+          <a href="index.html" data-dom-id="nav-home" class="inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hide-sm sm:inline-flex">
+            <span data-icon class="inline-flex" style="width:16px;height:16px;mask-image:url(assets/image_7_tgt36j.svg);-webkit-mask-image:url(assets/image_7_tgt36j.svg);"></span>
+            首页
+          </a>
+          <a href="settings.html" data-dom-id="nav-settings" class="inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hide-sm sm:inline-flex">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            设置
+          </a>
+          <a href="progress.html" data-dom-id="nav-progress" class="inline-flex items-center gap-2 rounded-md px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <span data-icon class="inline-flex" style="width:16px;height:16px;mask-image:url(assets/image_8_tgt36j.svg);-webkit-mask-image:url(assets/image_8_tgt36j.svg);"></span>
+            <span class="hide-sm sm:inline">转换进度</span>
+            <span class="sm:hidden inline">进度</span>
+          </a>
+          <a href="result.html" aria-current="page" class="inline-flex items-center gap-2 rounded-md bg-primary px-3 py-1.5 text-sm font-medium text-primary-foreground">
+            <span data-icon class="inline-flex" style="width:16px;height:16px;mask-image:url(assets/image_9_tgt36j.svg);-webkit-mask-image:url(assets/image_9_tgt36j.svg);"></span>
+            <span class="hide-sm sm:inline">转换结果</span>
+            <span class="sm:hidden inline">结果</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="mx-auto w-full max-w-5xl flex-1 px-4 sm:px-6 py-6 sm:py-8">
+      <!-- 结果面板 -->
+      <div class="panel mb-5 sm:mb-6 fade-in">
+        <div class="p-5 sm:p-7">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div class="flex items-start sm:items-center gap-4">
+              <div class="relative shrink-0">
+                <div class="absolute -inset-1 rounded-full bg-gradient-to-br from-chart-2 to-chart-3 opacity-30 blur-sm"></div>
+                <div class="relative flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-gradient-to-br from-chart-2 to-chart-3 text-primary-foreground shadow-lg shadow-chart-2/30">
+                  <span data-icon class="inline-flex" style="width:28px;height:28px;mask-image:url(assets/image_3_tgt36j.svg);-webkit-mask-image:url(assets/image_3_tgt36j.svg);"></span>
+                </div>
+              </div>
+              <div class="min-w-0">
+                <h1 class="text-xl sm:text-2xl font-semibold text-card-foreground">全部转换完成！</h1>
+                <p class="mt-1 text-sm text-muted-foreground">本次共处理 <span id="result-total" class="font-medium text-foreground">0</span> 个文件，成功 <span id="result-ok" class="font-medium text-chart-2">0</span> 个，失败 <span id="result-err" class="font-medium text-destructive">0</span> 个</p>
+              </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2 sm:gap-3 shrink-0">
+              <button data-dom-id="action-download-all" class="btn primary">
+                <span data-icon class="inline-flex" style="width:16px;height:16px;mask-image:url(assets/image_2_tgt36j.svg);-webkit-mask-image:url(assets/image_2_tgt36j.svg);"></span>
+                下载全部
+              </button>
+              <button data-dom-id="action-again" class="btn outline">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>
+                <span class="hide-sm sm:inline">再来一次</span>
+                <span class="sm:hidden inline">重新转换</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 统计卡片 -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-5 sm:mb-6 fade-in" style="animation-delay:.05s">
+        <div class="rounded-xl border border-border bg-card p-4 sm:p-5">
+          <p class="text-xs text-muted-foreground mb-1">总文件数</p>
+          <div class="flex items-baseline gap-1">
+            <span data-stat="total" class="text-2xl font-semibold tabular-nums text-card-foreground">0</span>
+            <span class="text-xs text-muted-foreground">个</span>
+          </div>
+        </div>
+        <div class="rounded-xl border border-border bg-card p-4 sm:p-5">
+          <p class="text-xs text-muted-foreground mb-1">原始大小</p>
+          <div class="flex items-baseline gap-1">
+            <span data-stat="orig" class="text-2xl font-semibold tabular-nums text-card-foreground">0 KB</span>
+          </div>
+        </div>
+        <div class="rounded-xl border border-border bg-card p-4 sm:p-5">
+          <p class="text-xs text-muted-foreground mb-1">转换后大小</p>
+          <div class="flex items-baseline gap-1">
+            <span data-stat="converted" class="text-2xl font-semibold tabular-nums text-card-foreground">0 KB</span>
+          </div>
+        </div>
+        <div class="rounded-xl border border-border bg-card p-4 sm:p-5">
+          <p class="text-xs text-muted-foreground mb-1">节省空间</p>
+          <div class="flex items-baseline gap-1">
+            <span data-stat="saved" class="text-2xl font-semibold tabular-nums text-chart-2">0%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 结果列表 -->
+      <div class="panel fade-in" style="animation-delay:.1s">
+        <div class="head">
+          <h2>转换结果列表</h2>
+          <span class="spacer"></span>
+          <div class="flex items-center gap-2">
+            <div class="hide-sm sm:flex items-center gap-2 rounded-full bg-muted p-1">
+              <button data-filter="all" class="filter-btn active inline-flex h-8 items-center rounded-full px-3 text-xs font-medium transition-colors">全部</button>
+              <button data-filter="ok" class="filter-btn inline-flex h-8 items-center rounded-full px-3 text-xs font-medium transition-colors">成功</button>
+              <button data-filter="err" class="filter-btn inline-flex h-8 items-center rounded-full px-3 text-xs font-medium transition-colors">失败</button>
+            </div>
+          </div>
+        </div>
+        <div data-result-list class="divide-y divide-border"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh" class="light" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Pea 全能格式转换器 - 一站式文件格式转换</title>
+  <meta name="description" content="支持文档、图片、音视频、电子书等 200+ 格式，本地处理，快速安全。">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+  <style type="text/tailwindcss">
+    @theme inline {
+      --color-background: var(--doubao-background);
+      --color-foreground: var(--doubao-foreground);
+      --color-card: var(--doubao-card);
+      --color-card-foreground: var(--doubao-card-foreground);
+      --color-popover: var(--doubao-popover);
+      --color-popover-foreground: var(--doubao-popover-foreground);
+      --color-primary: var(--doubao-primary);
+      --color-primary-foreground: var(--doubao-primary-foreground);
+      --color-secondary: var(--doubao-secondary);
+      --color-secondary-foreground: var(--doubao-secondary-foreground);
+      --color-muted: var(--doubao-muted);
+      --color-muted-foreground: var(--doubao-muted-foreground);
+      --color-accent: var(--doubao-accent);
+      --color-accent-foreground: var(--doubao-accent-foreground);
+      --color-destructive: var(--doubao-destructive);
+      --color-destructive-foreground: var(--doubao-destructive-foreground);
+      --color-border: var(--doubao-border);
+      --color-input: var(--doubao-input);
+      --color-ring: var(--doubao-ring);
+      --color-chart-1: var(--doubao-chart-1);
+      --color-chart-2: var(--doubao-chart-2);
+      --color-chart-3: var(--doubao-chart-3);
+      --color-chart-4: var(--doubao-chart-4);
+      --color-chart-5: var(--doubao-chart-5);
+      --radius-sm: var(--doubao-radius-sm);
+      --radius-md: var(--doubao-radius-md);
+      --radius-lg: var(--doubao-radius-lg);
+      --radius-xl: var(--doubao-radius-xl);
+    }
+    @layer base {
+      body { background: var(--doubao-background); color: var(--doubao-foreground); }
+    }
+  </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+  <main>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
+      <div class="mx-auto flex h-14 max-w-5xl items-center justify-between px-4 sm:px-6">
+        <a href="index.html" class="flex items-center gap-2 text-base font-semibold text-foreground">
+          <span data-icon class="h-5 w-5 text-primary" style="mask-image:url(assets/image_0_tgt36j.svg); -webkit-mask-image:url(assets/image_0_tgt36j.svg);"></span>
+          <span class="hide-sm sm:inline">Pea 全能格式转换器</span>
+          <span class="sm:hidden inline">Pea</span>
+        </a>
+        <nav class="flex items-center gap-1">
+          <a href="index.html" class="inline-flex h-9 items-center rounded-full px-3 text-sm font-medium text-primary bg-primary/10" aria-current="page">首页</a>
+          <a href="settings.html" class="inline-flex h-9 items-center rounded-full px-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors hide-sm sm:inline-flex">设置</a>
+          <a href="progress.html" class="inline-flex h-9 items-center rounded-full px-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors hide-sm sm:inline-flex">进度</a>
+          <a href="result.html" class="inline-flex h-9 items-center rounded-full px-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors hide-sm sm:inline-flex">结果</a>
+          <button data-theme-toggle class="inline-flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground hover:bg-muted hover:text-foreground transition-colors ml-1" aria-label="切换主题">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="mx-auto flex max-w-3xl flex-col items-center px-4 sm:px-6 pt-16 sm:pt-20 pb-10 sm:pb-12 text-center">
+      <div class="inline-flex items-center gap-2 rounded-full bg-accent/50 px-3 py-1 text-xs font-medium text-accent-foreground mb-6 fade-in">
+        <span class="inline-block h-1.5 w-1.5 rounded-full bg-chart-2"></span>
+        本地处理 · 隐私保护 · 极速转换
+      </div>
+      <h1 class="mb-3 text-2xl sm:text-3xl font-semibold tracking-tight text-foreground fade-in" style="animation-delay:.05s">
+        一站式文件格式转换
+      </h1>
+      <p class="mb-8 sm:mb-10 max-w-lg text-sm sm:text-base text-muted-foreground fade-in" style="animation-delay:.1s">
+        支持文档、图片、音视频、电子书等 200+ 格式，本地处理，快速安全。
+      </p>
+
+      <!-- Drop Zone -->
+      <div class="relative w-full rounded-xl sm:rounded-2xl border-2 border-dashed border-border bg-card p-8 sm:p-12 transition-all duration-200 hover:border-primary/40 hover:bg-accent/20 cursor-pointer fade-in" data-dropzone style="animation-delay:.15s">
+        <input type="file" id="file-upload" class="absolute inset-0 cursor-pointer opacity-0" multiple aria-label="上传文件">
+        <div class="pointer-events-none flex flex-col items-center gap-4 sm:gap-5">
+          <div class="relative">
+            <div class="absolute inset-0 rounded-full bg-primary/10 blur-xl opacity-60 scale-125"></div>
+            <span data-icon class="relative h-14 w-14 sm:h-16 sm:w-16 text-primary/70" style="mask-image:url(assets/image_1_tgt36j.svg); -webkit-mask-image:url(assets/image_1_tgt36j.svg);"></span>
+          </div>
+          <div>
+            <p class="text-base sm:text-lg font-medium text-foreground">拖拽文件到此处，或点击上传</p>
+            <p class="mt-1 text-xs sm:text-sm text-muted-foreground">支持批量上传，自动识别源格式</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="settings.html" data-dom-id="cta-upload-start" class="mt-6 sm:mt-8 inline-flex h-11 items-center gap-2 rounded-full bg-primary px-5 sm:px-6 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 focus-visible:outline-2 focus-visible:outline-ring focus-visible:outline-offset-2 fade-in" style="animation-delay:.2s">
+        <span data-icon class="h-4 w-4" style="mask-image:url(assets/image_4_tgt36j.svg); -webkit-mask-image:url(assets/image_4_tgt36j.svg);"></span>
+        上传并开始转换
+      </a>
+    </section>
+
+    <!-- 支持的格式 -->
+    <section class="mx-auto max-w-5xl px-4 sm:px-6 pb-16 sm:pb-24">
+      <div class="flex items-center gap-2 mb-5 sm:mb-6 fade-in">
+        <h2 class="text-lg font-semibold text-foreground">支持的格式</h2>
+        <span class="rounded-full bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground">200+ 种</span>
+        <div class="flex-1"></div>
+        <a href="#" class="text-sm text-primary hover:underline">查看全部 →</a>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+        <!-- 文档 -->
+        <div class="flex flex-col gap-3 p-4 sm:p-5 rounded-xl border border-border bg-card hover:border-primary/30 hover:bg-accent/10 transition-all cursor-pointer fade-in" data-format-card style="animation-delay:.05s">
+          <div class="flex items-center gap-3">
+            <span class="w-10 h-10 rounded-xl grid place-items-center text-xl text-primary-foreground" style="background:linear-gradient(135deg, var(--chart-2), var(--chart-3))">📕</span>
+            <div>
+              <h3 class="font-semibold text-card-foreground">文档</h3>
+              <p class="text-xs text-muted-foreground">15 种格式</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">PDF</span>
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">DOCX</span>
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">DOC</span>
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">TXT</span>
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">...</span>
+          </div>
+        </div>
+
+        <!-- 图片 -->
+        <div class="flex flex-col gap-3 p-4 sm:p-5 rounded-xl border border-border bg-card hover:border-primary/30 hover:bg-accent/10 transition-all cursor-pointer fade-in" data-format-card style="animation-delay:.1s">
+          <div class="flex items-center gap-3">
+            <span class="w-10 h-10 rounded-xl grid place-items-center text-xl text-primary-foreground" style="background:linear-gradient(135deg, var(--chart-4), var(--primary))">🖼️</span>
+            <div>
+              <h3 class="font-semibold text-card-foreground">图片</h3>
+              <p class="text-xs text-muted-foreground">40+ 种格式</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">JPG</span>
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">PNG</span>
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">WEBP</span>
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">GIF</span>
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">...</span>
+          </div>
+        </div>
+
+        <!-- 音视频 -->
+        <div class="flex flex-col gap-3 p-4 sm:p-5 rounded-xl border border-border bg-card hover:border-primary/30 hover:bg-accent/10 transition-all cursor-pointer fade-in" data-format-card style="animation-delay:.15s">
+          <div class="flex items-center gap-3">
+            <span class="w-10 h-10 rounded-xl grid place-items-center text-xl text-primary-foreground" style="background:linear-gradient(135deg, #ec4899, var(--destructive))">🎬</span>
+            <div>
+              <h3 class="font-semibold text-card-foreground">音视频</h3>
+              <p class="text-xs text-muted-foreground">80+ 种格式</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">MP4</span>
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">MOV</span>
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">MP3</span>
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">WAV</span>
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">...</span>
+          </div>
+        </div>
+
+        <!-- 压缩包 -->
+        <div class="flex flex-col gap-3 p-4 sm:p-5 rounded-xl border border-border bg-card hover:border-primary/30 hover:bg-accent/10 transition-all cursor-pointer fade-in" data-format-card style="animation-delay:.2s">
+          <div class="flex items-center gap-3">
+            <span class="w-10 h-10 rounded-xl grid place-items-center text-xl text-primary-foreground" style="background:linear-gradient(135deg, #f59e0b, #d97706)">🗂️</span>
+            <div>
+              <h3 class="font-semibold text-card-foreground">压缩包</h3>
+              <p class="text-xs text-muted-foreground">10+ 种格式</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">ZIP</span>
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">RAR</span>
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">7Z</span>
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">TAR</span>
+            <span class="px-2 py-0.5 rounded-md bg-muted text-muted-foreground text-xs">...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10 sm:mt-16">
+        <div class="flex items-start gap-3 p-4 rounded-xl bg-card border border-border fade-in" style="animation-delay:.1s">
+          <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-primary/10 text-primary shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </span>
+          <div>
+            <h4 class="font-semibold text-sm text-foreground">本地处理</h4>
+            <p class="text-xs text-muted-foreground mt-1">所有转换都在您的浏览器中进行，文件不会上传到服务器，保证数据隐私。</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-4 rounded-xl bg-card border border-border fade-in" style="animation-delay:.15s">
+          <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-chart-2/10 text-chart-2 shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </span>
+          <div>
+            <h4 class="font-semibold text-sm text-foreground">极速转换</h4>
+            <p class="text-xs text-muted-foreground mt-1">采用多线程并行处理技术，最大程度利用您的设备性能。</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-4 rounded-xl bg-card border border-border fade-in" style="animation-delay:.2s">
+          <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-accent text-accent-foreground shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </span>
+          <div>
+            <h4 class="font-semibold text-sm text-foreground">批量转换</h4>
+            <p class="text-xs text-muted-foreground mt-1">支持一次选择多个不同类型文件，一键批量转换，省时省力。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-border bg-background py-6">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2 text-sm text-muted-foreground">
+        <span data-icon class="h-4 w-4" style="mask-image:url(assets/image_0_tgt36j.svg); -webkit-mask-image:url(assets/image_0_tgt36j.svg);"></span>
+        <span>Pea Converter · 2025</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs text-muted-foreground">
+        <a href="#" class="hover:text-foreground transition-colors">隐私政策</a>
+        <a href="#" class="hover:text-foreground transition-colors">使用条款</a>
+        <a href="#" class="hover:text-foreground transition-colors">帮助中心</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
